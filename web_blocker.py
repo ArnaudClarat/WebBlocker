@@ -25,10 +25,10 @@ def hour_comparaison():
 
 def main():
     host_redirect = "127.0.0.1"
-    website_list = ["www.facebook.com", "facebook.com", "www.reddit.com", "reddit.com", "www.9gag.com,", 
-    "9gag.com", "www.viedemerde.fr", "www.danstonchat.com"]
+    website_list = ["www.facebook.com", "facebook.com","https://facebook.com", "www.reddit.com", "reddit.com", "www.9gag.com", 
+    "9gag.com", "www.viedemerde.fr","viedemerde.fr", "www.danstonchat.com", "danstonchat.com", 
+    "https://danstonchat.com", "https://www.viedemerde.fr"]
     while True:
-        
         if  hour_comparaison():
             with open(host_choice(), 'r+') as file:
                 content = file.read()
@@ -37,6 +37,7 @@ def main():
                         pass
                     else:
                         file.write(host_redirect+" "+website+"\n")
+                        
         else:
             with open(host_choice(), 'r+') as file:
                 content = file.readlines()
@@ -47,5 +48,5 @@ def main():
                 file.truncate()
         time.sleep(5)
 
-        if __name__ == "__main__":
-            main()
+if __name__ == "__main__":
+    main()
